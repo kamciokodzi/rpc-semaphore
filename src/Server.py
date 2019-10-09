@@ -1,7 +1,7 @@
 import rpyc
-from rpyc.utils.server import ThreadedServer
-from multiprocessing import Lock
 import time
+from multiprocessing import Lock
+from rpyc.utils.server import ThreadedServer
 
 size = 10
 threadsInQueue = 0
@@ -42,7 +42,7 @@ class Server(rpyc.Service):
         with lock:
             size += val
             wait = False
-        print("Actual size after Out is " + str(size))
+        print("Size after V: " + str(size))
 
 
 if __name__ == "__main__":
